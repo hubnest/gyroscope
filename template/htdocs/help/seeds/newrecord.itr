@@ -1,0 +1,4 @@
+	<div class="inputrow">
+		<div class="formlabel">#fld1#:</div>
+		<input class="inp" id="#fld0#_new">
+	</div>

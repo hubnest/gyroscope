@@ -1,17 +1,321 @@
+6.9
+- added "hdpromote" to nano.js
+- HD icons and logos
+
+6.8.2
+- added favicon
+- minor mobile layout fix
+
+6.8.1
+- ctrl+enter to pick the top lookup item ("listitem" class or "pickable" attribute)
+
+6.8
+- desktop mode: option to use Estonian ID card as auxillary authentication token
+- nano.js: ajxb uses GET when no data is posted (Nginx "POST to static file" fix, ajxjs)
+
+6.7.1
+- larger mobile portrait icons and reload buttons
+
+6.7
+- tab refresh on double click (explicit button in mobile view)
+- "persist" option in reload tab to indicate non-write reloads
+
+6.6
+- using POST on all ajax calls, with extra data field
+- dropped prepend feature in nano.js
+- added sysinfo tool
+
+6.5.1
+- improved hint status to make fast updates noticeable
+
+6.5
+- resolved conflict between fastlane support and authenticated tool bar icons
+- password requests sent via POST to bypass server logging
+
+6.4
+- Virtual account support
+- Auth chaining and sync bug fix (2.9)
+- codegen improvements
+- nano.js: intercepting header errors
+- toolbar sprite fixes
+- "Tab" key trapper for textarea editors
+
+6.3.2
+- auth display fix
+- codegen: upload limit
+
+6.3.1
+- codegen: "first offender" validation
+- improved forminput filtering
+
+6.3
+- improved list search for better device compatibility
+- use hash_equals to prevent time-attack
+
+6.2
+- added a light version of faceted nav template
+
+6.1.2
+- added SQLSRV for SQL SERVER
+
+6.1.1
+- codegen: paging fix
+
+6.1
+
+- more extensive fastlane support
+- updated WSS key format (Firefox URL encoding fix)
+
+
+6.0
+- notion of "fastlane" (experimental)
+- introduced SVN merge boundary
+- improved custom MCE templates
+
+5.9.9
+- refined fullscreen loader
+- media library template fixes
+- updater uses fullscreen view
+- mobile fixes
+
+
+5.9.8
+- *fullscreen loader
+
+5.9.7
+- *user manager
+
+5.9.6
+- new Gyroscope logo
+- moved Antradar logo to updater view
+
+5.9.5
+- improved password initialization screen
+
+
+5.9.4
+- force password change before login
+- RTE: custom layout template support
+
+5.9.3
+- replaced tabulated layout with list layout in detail editors
+- mobile lookup bug fix
+
+5.9.2
+- mobile optimization
+- graphics update
+
+
+5.9.1
+- *reloadtab: server override (dropped "newkey" tab option)
+- legacy browser fixes
+- misc. codegen fixes
+
+5.9
+- *new skin (desktop only)
+- improved tab system
+
+5.8
+- added speech recognition
+- added status bar icons
+
+5.7
+- added close-all tab mode
+
+5.6.2
+- view port dimension fix
+- show main icons with text labels
+- panel update indicator
+
+5.6.1
+- bug fix multiple time picker in mini view
+- enabled stealth logging for cascading entries and wss notification
+- login screen optimized for mobile devices
+
+5.6
+- date/time and time picker
+
+5.5
+- dropped media query in favour of managed rotation styling
+- fixed android chrome keyboard interference
+
+5.4.2
+- unified rotation handling for better device support
+- fixed mobile view tab bar transparency
+- "auto next" on login screen
+
+5.4.1
+- better android PHONE support (rotation inversion, phased out orientation event in favor of mediaquery event)
+- all mobile browsers redirected to iPhone view
+
+5.4
+- added internal scrolling table (stable) for mobile view
+- improved login screen
+- full width single column in mobile portrait mode
+- adaptive column width in mobile landscape mode
+- orientation support for Firefox (Android)
+- fixed rotation code on Chrome (Android)
+
+5.3.1
+- added basic WSS handshake authentication
+- mobile orientation inversion for andriod devices
+- tablet height adjustment
+- disabled websocket for Samsung Smart TV even if websocket API is supported
+- changed POST encoding from text/xml to text/plain for better debugging
+- enhanced AsyncD interface
+
+5.3
+- extracted actionlog and users tablenames for 3rd party hybrid installation
+
+5.2.1
+- enabled versioning for whitelabeling
+
+5.2
+- warning message in status bar for non-websocket browsers
+- enforcing standard rendering mode
+- fixed duplicate login cookie for newer versions of HHVM
+
+5.1
+- web socket renegotiation upon disconnection
+
+5.0
+- added wss sync; enable in ws_js.php
+
+4.9
+- help system for AsyncD integration
+- help system for digital signing
+
+4.8
+- added richtext editor w/ clean image paste and localization
+- removed help sub systems from sample apps
+- removed unused resource files
+
+4.7
+- codegen system "hashes & dashes"
+- added ajxpgn wrapper reloadview to auto close lookup lists
+- moved encodeHTML from viewport to nano
+- added sandbox app
+- removed default sample app
+
+4.6
+- introduced reloadable ajxpgn
+
+4.5.1
+- adjusted load order; auth loads before settings
+
+4.5
+- added action log and event audit
+
+4.4.2
+- added "noapos" convenient function to escape single quotes
+- added auto-generated welcome screen
+- internal help system hidden on live server
+
+4.4.1
+- setting explicit timezone in lb.php
+
+4.4
+- unified toolbar config and style in desktop and mobile view
+- style fixes
+
+4.3.1
+- updated sakila wait indicators
+- minor fix in built-in help content
+
+4.3
+- added wait indicator only for slow queries (default > 800ms)
+- added tab wait indicators
+
+4.2.2
+- added date2stamp function in forminput.php
+
+4.2
+- added "cancelpickup" to pre-lock ID fields
+- moved "makelookup" to forminput.php
+- updated disabled input style
+
+4.1.2
+- https fix for Nginx Fcgi
+- x-status for instant kick
+
+4.1
+-----
+- set tab title by tab key
+
+4.0
+-----
+- updater
+
+3.9
+-----
+- variable column-, input widths for desktop and mobile
+- block the left view during look up
+- style upgrade
+- added Sakila sample
+
+3.8.4
+-----
+- identity-based auto lookup lock. assign id to lookup input, assign {id}_val2 to cancelation container
+- in-line lookup for id'ed lookups. use makelookup($id) function for mobile inline lookup
+- mini calendar view
+
+3.8.3
+-----
+mobile viewport left panel sync fix
+single cluster config point lb.php
+
+3.8.2
+-----
+email validation
+"force" flag required for "showview" in iphone mode
+mobile sprite fixes
+layout fix for rekeyed tabs 
+authpump fix
+sprite update (del, print)
+
+
+3.8.1
+-----
+unicode patch
+
+3.8
+-----
+toolbar sprite shared by desktop & mobile
+help system fix
+disabled faulty blind navigation panel hint
+use media query for rotation
+
+
+3.7
+-----
+re-enabled exit notification
+theme update
+version info defined in auth.php; shown in login and meta
+sprite icons for desktop mode *
+instant authpump *
+
+3.6
+-----
+dedicated view panel for auto-completes *
+
+3.5
+-----
+.break style fix
+
 3.4
 -----
-set leave confirmation conditional
+set leave confirmation conditional *
 
 3.3
 -----
-live eviction stubs
+live eviction stubs *
 
 3.2
 -----
-non-closeable tab mode for reloadtab
-tab can be rekeyed during tab reload
-callback function has direct access to XHR object
-added tab lock to prevent duplicate requests
+non-closeable tab mode for reloadtab *
+tab can be rekeyed during tab reload *
+callback function has direct access to XHR object *
+added tab lock to prevent duplicate requests *
 improved iPhone tab handling
 tab system updated for sample project
 
@@ -33,7 +337,7 @@ included platform version
 2.9.4
 -----
 retina mode
-extended iphone mode for inverted orientation (playbook) and variable screen sizes (iphone5)
+extended iphone mode for inverted orientation (playbook) and variable screen sizes (iphone5) *
 
 2.9.3
 -----
@@ -41,7 +345,7 @@ Switched to MySQLi as default connector
 
 2.9.2
 -----
-Opera Mini support (upgrade notice: convert all inline list lookups)
+Opera Mini support (upgrade notice: convert all inline list lookups) *
 
 2.9.1
 -----

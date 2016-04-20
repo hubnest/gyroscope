@@ -3,6 +3,8 @@ A list view is typically invoked by clicking on a <a onclick="showhelp('menuicon
 <b>A basic list view template</b>:
 <br><br>
 <textarea style="width:100%;height:200px;">
+&lt;?php
+
 function list#records#{
 	global $db;
 	
@@ -25,6 +27,8 @@ function list#records#{
 <br><br>
 
 <textarea style="width:100%;height:300px;">
+&lt;?php
+
 function list#record#s(){
 	global $db;
 	$mode=GETSTR('mode');
@@ -36,8 +40,8 @@ function list#record#s(){
 
 ?&gt;
 <div class="section">
-<div style="margin:0;padding:0;font-size:12px;padding:5px 0;">
-<input id="#record#key" onkeyup="_inline_lookup#record#(this);">
+<div class="listbar">
+<input id="#record#key" class="img-mg" onkeyup="_inline_lookup#record#(this);">
 </div>
 <div id="#record#list">
 &lt;?		
@@ -59,10 +63,10 @@ function list#record#s(){
 ?&gt;
 <div style="font-size:12px;padding:10px 0;">
 &lt;?echo $page+1;?&gt; of &lt;?echo $maxpage+1;?&gt;
-&nbsp;
-<a href=# onclick="ajxpgn('#record#list',document.appsettings.codepage+'?cmd=slv0&page=&lt;?echo $page-1;?&gt;&mode=embed');return false;">&laquo; Prev</a>
+&amp;nbsp;
+<a href=# onclick="ajxpgn('#record#list',document.appsettings.codepage+'?cmd=slv1&page=&lt;?echo $page-1;?&gt;&mode=embed');return false;">&amp;laquo; Prev</a>
 |
-<a href=# onclick="ajxpgn('#record#list',document.appsettings.codepage+'?cmd=slv0&page=&lt;?echo $page+1;?&gt;&mode=embed');return false;">Next &raquo;</a>
+<a href=# onclick="ajxpgn('#record#list',document.appsettings.codepage+'?cmd=slv1&page=&lt;?echo $page+1;?&gt;&mode=embed');return false;">Next &amp;raquo;</a>
 </div>
 &lt;?		
 	}
@@ -72,12 +76,13 @@ function list#record#s(){
 	$rs=sql_query($query,$db);
 	
 	while ($myrow=sql_fetch_array($rs)){
-		$#record#id=$myrow['#record#id'];
+		$#primarykey#=$myrow['#primarykey#'];
 		$fname=$myrow['fname'];
 		$lname=$myrow['lname'];
-		$db#record#name="$fname $lname";
+		$#record#title="$fname $lname";
+		$db#record#title=noapos(htmlspecialchars($#record#title));
 ?&gt;
-<div class="listitem"><a onclick="show#record#(&lt;?echo $#record#id;?&gt;,'&lt;?echo $db#record#name;?&gt;');">&lt;?echo $db#record#name;?&gt;</a></div>
+<div class="listitem"><a onclick="show#record#(&lt;?echo $#primarykey#;?&gt;,'&lt;?echo $db#record#title;?&gt;');">&lt;?echo $#record#title;?&gt;</a></div>
 &lt;?		
 	}//while
 	
@@ -87,7 +92,7 @@ function list#record#s(){
 </div>
 
 <script>
-gid('tooltitle').innerHTML='<a>Individuals</a>';
+gid('tooltitle').innerHTML='<a>#record#s</a>';
 ajxjs(self.show#record#,'#record#s.js');
 </script>
 &lt;?	
@@ -100,14 +105,14 @@ ajxjs(self.show#record#,'#record#s.js');
 <b>Template for <em>#records#.js</em></b>:
 
 <textarea style="width:100%;height:200px;">
-show#record#=function(#record#id,name){
-	addtab('#record#_'+#record#id,name,'show#record#&#record#id='+#record#id);	
+show#record#=function(#primarykey#,name){
+	addtab('#record#_'+#primarykey#,name,'show#record#&#primarykey#='+#primarykey#);	
 }
 
 _inline_lookup#record#=function(d){
 	if (d.timer) clearTimeout(d.timer);
 	d.timer=setTimeout(function(){
-		ajxpgn('#record#list',document.appsettings.codepage+'?cmd=slv0&mode=embed&key='+encodeHTML(d.value));
+		ajxpgn('#record#list',document.appsettings.codepage+'?cmd=slv1&mode=embed&key='+encodeHTML(d.value));
 	},300
 	);	
 }

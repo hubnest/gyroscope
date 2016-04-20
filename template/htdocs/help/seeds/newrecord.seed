@@ -1,0 +1,18 @@
+<?php
+
+function new#record#(){
+
+?>
+<div class="section">
+	<div class="sectiontitle">New #c_record#</div>
+	
+	
+#iterator-fieldlist-newrecord#		
+		<div class="inputrow">
+			<button onclick="add#record#();">Add #c_record#</button>
+		</div>
+
+</div>
+<?
+
+}

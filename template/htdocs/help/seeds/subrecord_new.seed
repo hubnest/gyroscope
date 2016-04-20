@@ -1,0 +1,17 @@
+<?php
+
+function new#record#($#masterkey#=null){
+	if (!isset($#masterkey#)) $#masterkey#=GETVAL('#masterkey#');
+	
+?>
+<div class="section">
+	<div class="sectiontitle">New #c_record#</div>
+	
+#iterator-fieldlist-newrecord#
+		<div class="inputrow">
+			<button onclick="add#record#(<?echo $#masterkey#?>);">Add #c_record#</button>
+		</div>
+</div>
+<?
+
+}
